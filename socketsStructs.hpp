@@ -24,5 +24,15 @@ struct addrinfo {
 	//	usually you use 1st working element,
 	//	but circumstances dictate how to choose
 }
+//sockaddr
+//	holds socket info for many types of sockets
+struct sockaddr {
+	unsigned short sa_family;	//address family, AF_xxx
+	//Used mainly to state either AF_INET (IPv4) OR AF_INET6 (IPv6)
+	//	and occasionally other things
+	char		   sa_data;		//14 bytes of protocol address
+	//holds the destination addr & the port number for the socket
+}
+
 
 #endif
