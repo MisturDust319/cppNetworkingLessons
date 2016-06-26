@@ -34,5 +34,19 @@ struct sockaddr {
 	//holds the destination addr & the port number for the socket
 }
 
+//sockaddr_in
+//	a complimentary class to sockaddr
+//	the "_in" stands for internet, and is used w/ IPv4
+//
+struct sockaddr_in {
+	short int			sin_family;		//Address family, AF_INET
+	//corresponds to sa_family in sockaddr, and must be set to AF_INET
+	unsigned short int	sin_port;		//port number
+	//must be in Network Byte Order (i.e. Big Endian)
+	struct in_addr		sin_addr;		//Internet addr
+	unsigned char		sin_zero[8];	//Same size as struct sockaddr
+	//used to pad stucture to length of sockaddr by using memset()
+	//	(a function which copies n bytes of a const into mem)
+}
 
 #endif
