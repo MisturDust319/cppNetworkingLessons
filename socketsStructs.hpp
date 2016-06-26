@@ -1,3 +1,5 @@
+#ifndef SOCKETSTRUCTS_H
+#define SOCKETSTRUCTS_H
 
 //addrinfo
 //	a struct to prep socket addr structs for use
@@ -22,3 +24,5 @@ struct addrinfo {
 	//	usually you use 1st working element,
 	//	but circumstances dictate how to choose
 }
+
+#endif
