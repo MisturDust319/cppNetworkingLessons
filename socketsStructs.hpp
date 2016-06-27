@@ -89,4 +89,17 @@ struct in6_addr {
 	unsigned char	s_addr; // that's a 32-bit int (4 bytes)
 }
 
+//sockaddr_storage
+//	a struct large enough to hold both IPv4 AND IPv6 structs
+//	If you don't know which protocol to use, pass this, and cast it
+//	to the proper type once you know
+struct sockaddr_storage {
+	sa_family_t	sa_family;	//address family
+	
+	// all this is padding, implementation specific, ignore it:
+	char	__ss_pad1[_SS_PAD1SIZE];
+	int64_t	__ss_align;
+	char	__ss_pad2[_SS_PAD2SIZE]
+}
+
 #endif
