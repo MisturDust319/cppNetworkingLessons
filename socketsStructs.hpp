@@ -79,4 +79,14 @@ struct sockaddr_in6 {
 	u_int32_t		sin6_scope_id;	//Scope ID
 }
 
+//in_addr
+//	a struct used for IPv6 only (in6_addr is for IPv6) meant to hold
+//	an IP addr
+//	this used to be a Union, not a struct
+//	I believe it is a struct only for naming purposes,
+//  to make it clear it's a IP addr, as it only holds one member
+struct in6_addr {
+	unsigned char	s_addr; // that's a 32-bit int (4 bytes)
+}
+
 #endif
